@@ -42,5 +42,16 @@
 1.git submodule add http://git.firstshare.cn/fe/\*.git 添加子模块仓库  
 2.git submodule init 初始化子模块，只在首次检出仓库时运行一次即可  
 3.git submodule update 更新子模块  
-4.git submodule foreach git pull origin <branch> 递归拉取子模块的最近提交  
+4.git submodule foreach git pull origin <branch> 递归拉取子模块的最近提交 
+
+## git config
+git config --global alias.co checkout
+git config --global alias.st status
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.ss stash
+git config --global alias.sl 'stash list'
+git config --global alias.sp 'stash pop'
+git config --global alias.la 'pull --rebase'
+git config --global alias.ti 'push origin HEAD'
 
