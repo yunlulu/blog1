@@ -45,13 +45,13 @@
 4.git submodule foreach git pull origin <branch> 递归拉取子模块的最近提交 
 
 ## git config
-1.git config --global alias.co checkout 
-2.git config --global alias.st status 
-3.git config --global alias.ci commit 
-4.git config --global alias.br branch 
+1.git config --global alias.co checkout  
+2.git config --global alias.st status  
+3.git config --global alias.ci commit  
+4.git config --global alias.br branch  
 5.git config --global alias.ss stash  
-6.git config --global alias.sl 'stash list' 
+6.git config --global alias.sl 'stash list'  
 7.git config --global alias.sp 'stash pop'  
 8.git config --global alias.la 'pull --rebase'  
-9.git config --global alias.ti 'push origin HEAD' 
+9.git config --global alias.ti 'push origin HEAD'  
 
