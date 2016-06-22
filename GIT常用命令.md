@@ -62,20 +62,15 @@ git reset --mixed：此为默认方式，不带任何参数的git   reset，即�
 git reset --soft HEAD^：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可  
 git reset --hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容  
 
-1. #回退所有内容到上一个版本  
+1.回退所有内容到上一个版本  
 git reset HEAD^  
-
-2. #回退a.py这个文件的版本到上一个版本  
+2.回退a.py这个文件的版本到上一个版本  
 git reset HEAD^ a.py  
-
-3. #向前回退到第3个版本  
+3.向前回退到第3个版本  
 git reset –-soft HEAD~3  
-
-4. #将本地的状态回退到和远程的一样  
+4.将本地的状态回退到和远程的一样  
 git reset –-hard origin/master  
-
-5. #回退到某个版本  
+5.回退到某个版本  
 git reset 057d  
-
-6. #回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit  
+6.回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit  
 git revert HEAD  
