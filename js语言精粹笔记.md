@@ -45,7 +45,12 @@ myObject.value // 3
 var add = function(a,b){
   return a + b;
 }
-// 给myObject增加一个 double 方法
+var myObject = {
+  value: 0,
+  increment: function(inc){
+    this.value += typeof inc === "number" ? inc : 1;
+  }
+}
 myObject.double = function(){
   var me = this;
   var helper = function(){
