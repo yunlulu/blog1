@@ -41,16 +41,11 @@ myObject.increment(2);
 myObject.value // 3
 ````
 #### 函数调用模式：当一个函数并非一个对象的属性时，那么它就是被当做一个函数来调用的。这是语言设计上的一个错误，解决方法
-````javacript
+````javascript
 var add = function(a,b){
   return a + b;
 }
-var myObject = {
-  value: 0,
-  increment: function(inc){
-    this.value += typeof inc === "number" ? inc : 1;
-  }
-}
+// 给myObject 增加一个double方法
 myObject.double = function(){
   var me = this;
   var helper = function(){
