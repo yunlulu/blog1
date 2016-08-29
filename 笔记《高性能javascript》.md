@@ -40,6 +40,7 @@ function loadScript(url,callback){
 }
 /*
 * 动态加载脚本，可以尽可能多的加载，如果要确保加载顺序，如下
+* 更好的做法是 把它们按顺序合并为一个文件，因为过程是异步的，文件大一点，不会影响
 */
 loadScript('file1.js',function(){
   laodScript('file2.js',function(){
