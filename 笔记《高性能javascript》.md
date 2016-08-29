@@ -101,5 +101,8 @@ loadScript('the-rest.js',function(){
   Application.init();// Application是the-rest.js里面的对象
 })
 </script>
+````
+#### loadScript增加版 Yahoo工程师编辑了延迟加载工具，压缩后（gzip）之前，只有1.5k
+````javascript
 
 ````
