@@ -50,3 +50,22 @@ loadScript('file1.js',function(){
   })
 })
 ````
+#### 性能优化之XMLHttpRequest脚本注入
+````javascript
+/*
+* 优点是兼容性强，各浏览器都支持。
+* 不足是不支持跨域，也就不能从CDN下载
+*/
+var xhr = new XMLHttpRequest();
+xhr.open('get','file1.js',true);
+xhr.onreadystatechange = function(){
+  if( xhr.readyState == 4 ){
+    if( xhr.status >= 200 && xhr.status < 300 || xhr.status == 304 ){
+      var script = doc.createElement('script');
+      script.type = 'text/javascript';
+      script.text = xhr.responseText;
+      doc.body.appendChild(script);
+  }
+};
+xhr.send(null);
+````
