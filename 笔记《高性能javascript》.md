@@ -69,3 +69,37 @@ xhr.onreadystatechange = function(){
 };
 xhr.send(null);
 ````
+#### 推荐的无阻塞模式
+````javascript
+/*
+* 添加大量script做法，只需两步
+* 先添加动态加载所需的代码，然后加载初始化页面所需的剩下的代码
+* 因为第一部分代码尽量精简，它下载执行很快，所以不会对页面有太多影响
+* 记得把这些代码压缩到最小尺寸
+*/
+<script>
+function loadScript(url,callback){
+  var script = doc.createElement('script');
+  script.type = "text/javascript";
+  if( script.readyState ){// IE
+    script.onreadystatechange = function(){
+      if( script.readyState == 'loaded' || script.readyState == 'complete' ){
+        script.onreadystatechange = null;
+        callback();
+      }
+    }
+  }else{
+    script.onload = function(){
+      callback();
+    }
+  }
+  script.src = "file1.js";
+  doc.getElementsByTagName('head')[0].appendChild(script); 
+}
+
+loadScript('the-rest.js',function(){
+  Application.init();// Application是the-rest.js里面的对象
+})
+</script>
+
+````
