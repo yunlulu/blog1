@@ -102,7 +102,24 @@ loadScript('the-rest.js',function(){
 })
 </script>
 ````
-#### loadScript增加版 Yahoo工程师编辑了延迟加载工具，压缩后（gzip）之前，只有1.5k
+#### loadScript增加版 Yahoo工程师编辑了延迟加载工具，压缩后（gzip）之前，只有1.5k[github地址](https://github.com/rgrove/lazyload/)
 ````javascript
-
+/*
+* LazyLoad同样可以动态加载css文件，这没有太大意义，因为css文件已是并行下载，不会阻塞页面的其他进程
+*/
+<script type="tetxt/javascript" src="lazyload-min.js"></script>
+<script>
+  LazyLoad.js(['first-file.js','the-rest.js'],function(){
+    Application.init();
+  })
+</script>
+````
+#### LABjs 另一个开源的无阻塞脚本加载工具 对加载过程更加精细，压缩后只有4.5k（非gzip）
+````javascript
+<script src="lab.js" type="text/javascript"></script>
+<script>
+  $LAB.script("first-file.js").script("the-rest.js").wait(function(){
+    Application.init();
+  })
+</script>
 ````
